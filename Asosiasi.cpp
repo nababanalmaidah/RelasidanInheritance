@@ -32,7 +32,7 @@ public:
     dokter(string pNama) : nama(pNama) {
         cout << "Dokter \"" << nama << "\" ada\n";
     }
-    
+
     ~dokter() {
         cout << "Dokter \"" << nama << "\" tidak ada\n";
     }
@@ -42,3 +42,17 @@ public:
     void cetakPasien();
 
 };
+
+void pasien::cetakDokter() {
+    cout << "Daftar Dokter yang menangani pasien \"" << this->nama << "\":\n";
+    for (auto& a : daftar_dokter)
+    {
+        cout << a->nama << "\n";
+    }
+    cout << endl;
+}
+
+void dokter::tambahPasien(pasien* pPasien) {
+    daftar_pasien.push_back(pPasien);
+    pPasien->tambahDokter(this);
+}
