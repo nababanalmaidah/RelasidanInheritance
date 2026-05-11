@@ -32,6 +32,7 @@ public:
     dokter(string pNama) : nama(pNama) {
         cout << "Dokter \"" << nama << "\" ada\n";
     }
+    
     ~dokter() {
         cout << "Dokter \"" << nama << "\" tidak ada\n";
     }
@@ -39,4 +40,5 @@ public:
     cetakPasien()
     void tambahPasien(pasien*);
     void cetakPasien();
+
 };
